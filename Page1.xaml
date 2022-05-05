@@ -1,0 +1,49 @@
+﻿<Page x:Class="GameOfLife.Page1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOfLife"
+        mc:Ignorable="d"
+        Title="Game of Life" Height="800" Width="1400" Loaded="Window_Loaded">
+    <DockPanel Margin="2">
+        <Grid x:Name="Page1Grid" DockPanel.Dock="Top"  Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="{Binding Path= ActualWidth, ElementName=Page1Grid}" Background="#FF889AD0" Grid.ColumnSpan="5"/>
+            <Button Content="Rules" HorizontalAlignment="center" VerticalAlignment="top" Height="150" Width="200" Grid.Column="0" FontSize="40" FontWeight="Bold" ToolTipService.ShowDuration="100000" ToolTipService.InitialShowDelay="1">
+                <Button.ToolTip>
+                    <ToolTip VerticalOffset="5" HorizontalOffset="700">
+                        <StackPanel Width="700">
+                            <TextBlock Text="If a cell was alive and had one or no neighbours the cell died (as if from loneliness).
+                                             If a cell was alive and had two or three neighbours the cell would survive.
+                                             If a cell was alive and had four or more neighbours it would die (from over population).
+                                             If there was a dead cell that had exactly three neighbours a new cell would be born." FontSize="18" TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="Shapes" x:Name="btnShapes" Click="btnShape_Click" HorizontalAlignment="center" VerticalAlignment="top" Height="150" Width="200" Grid.Column="1" FontSize="40" FontWeight="Bold" ToolTipService.ShowDuration="100000">
+                <Button.ToolTip>
+                    <ToolTip VerticalOffset="5" HorizontalOffset="600">
+                        <StackPanel Width="600">
+                            <TextBlock Text="There are a total of 5 different shapes available for you to play with.
+                                             To start, click the button once and you get the 1st preset shape.
+                                             Click it again and you get the 2nd shape and so on.
+                                             Once 5th shape is also chosen, you'll be back to the 1st shape.
+                                             If you do not understand, click the button a few times and you will get it. :)" FontSize="18" TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="Start/Stop" x:Name="btnStart" Click="btnStart_Click" HorizontalAlignment="center" VerticalAlignment="top" Height="150" Width="200" Grid.Column="2" FontSize="40" FontWeight="Bold"/>
+            <Button Content="Reset" x:Name="btnReset" Click="btnReset_Click" HorizontalAlignment="center" VerticalAlignment="top" Height="150" Width="200" Grid.Column="4" FontSize="40" FontWeight="Bold"/>
+        </Grid>
+        <Canvas x:Name="cBoard"  Width="1200" Height="500" Margin="20"></Canvas>
+    </DockPanel>
+</Page>
