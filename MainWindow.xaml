@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Game of Life" Height="800" Width="1400">
     <Grid x:Name="MainGrid">
+        <!--Making a grid so that buttons, text boxes can align and go to places I want it to be -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -16,7 +17,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <!-- The label of my "Game Of Lyfe" text -->
         <Label Content="Game of Lyfe" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="150" VerticalAlignment="Center" Width="{Binding Path=ActualWidth, ElementName=MainGrid}" FontSize="90" Background="#FF889AD0" FontWeight="Bold" FontStyle="Normal" Foreground="White" Grid.ColumnSpan="3"/>
+        <!-- The button of "PLAY!" -->
         <Button Content="PLAY!" Width="300" Height="170" FontSize="60" HorizontalContentAlignment="center" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Click="btnPlay_Click" />
     </Grid>
 </Window>
