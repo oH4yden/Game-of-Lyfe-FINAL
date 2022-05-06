@@ -8,6 +8,7 @@ namespace GameOfLife
 {
     class CellModel
     {
+        // getting the three dimensions of a cell (rows, columns and state)
         public int Ren { get; set; }
         public int Col { get; set; }
         public bool State { get; set; }
